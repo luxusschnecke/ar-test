@@ -25,11 +25,11 @@
             background-position: center right; /* Adjusted background position */
             background-size: cover;
         }
-       body {
-  body {
+ body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     height: 100vh;
     margin: 0;
     background-color: #f0f0f0;
@@ -55,6 +55,13 @@
     transform: scale(1.1);
 }
 
+#display-image {
+    max-width: 80%;
+    max-height: 80%;
+    margin-top: 20px; /* Adjust as needed for spacing from the button */
+}
+
+
     </style>
   </head>
   
@@ -65,11 +72,14 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <button class="fancy-button" onclick="openImage()">WHAT IS THIS?</button>
+    <button class="fancy-button" onclick="showImage()">Click Me</button>
+    <img id="display-image" src="" alt="Image" style="display: none;">
 
     <script>
-        function openImage() {
-            window.open('Beschreibungstext.png', '_blank');
+        function showImage() {
+            const img = document.getElementById('display-image');
+            img.src = 'path/to/your/image.png';  // Replace with the path to your image
+            img.style.display = 'block';
         }
     </script>
 </body>
