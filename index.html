@@ -25,7 +25,7 @@
             background-position: center right; /* Adjusted background position */
             background-size: cover;
         }
- body {
+body {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -61,7 +61,6 @@
     margin-top: 20px; /* Adjust as needed for spacing from the button */
 }
 
-
     </style>
   </head>
   
@@ -72,15 +71,25 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <button class="fancy-button" onclick="showImage()">WHAT IT THIS?</button>
+    <button class="fancy-button" onclick="showImage(event)">Click Me</button>
     <img id="display-image" src="" alt="Image" style="display: none;">
 
     <script>
-        function showImage() {
+        function showImage(event) {
+            event.stopPropagation();
             const img = document.getElementById('display-image');
-            img.src = 'Beschreibungstext.png';  // Replace with the path to your image
+            img.src = 'path/to/your/image.png';  // Replace with the path to your image
             img.style.display = 'block';
         }
+
+        document.addEventListener('click', function() {
+            const img = document.getElementById('display-image');
+            img.style.display = 'none';
+        });
+
+        document.getElementById('display-image').addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
     </script>
 </body>
 
