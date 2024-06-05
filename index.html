@@ -25,6 +25,32 @@
             background-position: center right; /* Adjusted background position */
             background-size: cover;
         }
+       body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    }
+
+    .fancy-button {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    border-radius: 5px;
+}
+
+.fancy-button:hover {
+    background-color: black;
+    color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    transform: scale(1.1);
+}
     </style>
   </head>
   
@@ -39,7 +65,7 @@
 
     <script>
         function openImage() {
-            window.open('path/to/your/image.png', '_blank');
+            window.open('Beschreibungstext.png', '_blank');
         }
     </script>
 </body>
