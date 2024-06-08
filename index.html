@@ -72,26 +72,46 @@ body {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto-playing Audio</title>
+    <title>Audio Player with Custom Play Button</title>
     <style>
-        audio {
-            display: none; /* Hide the audio controls */
+        #audio-player {
+            display: none; /* Hide the default audio controls */
+        }
+
+        #play-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        #play-button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <audio id="background-audio" autoplay>
+    <audio id="audio-player">
         <source src="Club Cab - Beta Blocker.ogg" type="audio/ogg">
         <source src="Club Cab - Beta Blocker.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
+    
+    <button id="play-button">Play</button>
 
     <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const audio = document.getElementById('background-audio');
-            audio.play().catch(error => {
-                console.log('Audio playback was prevented by the browser.');
-            });
+        document.getElementById('play-button').addEventListener('click', function() {
+            const audio = document.getElementById('audio-player');
+            if (audio.paused) {
+                audio.play();
+                this.textContent = 'Pause';
+            } else {
+                audio.pause();
+                this.textContent = 'Play';
+            }
         });
     </script>
 </body>
