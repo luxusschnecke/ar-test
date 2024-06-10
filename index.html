@@ -22,9 +22,7 @@
             justify-content: center;
             height: 70vh;
             margin: 0;
-            background: url('dj_cubicle2.png') no-repeat fixed;
-            background-position: center right; /* Adjusted background position */
-            background-size: cover;
+  
         }
 body {
     display: flex;
@@ -61,6 +59,18 @@ body {
     margin-top: 20px; /* Adjust as needed for spacing from the button */
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    transition: background-color 0.1s;
+}
+
+       
     </style>
   </head>
   
@@ -131,7 +141,7 @@ body {
         function showImage(event) {
             event.stopPropagation();
             const img = document.getElementById('display-image');
-            img.src = 'Beschreibungstext.png';  // Replace with the path to your image
+            img.src = 'Text_AR.png';  // Replace with the path to your image
             img.style.display = 'block';
         }
 
@@ -144,6 +154,31 @@ body {
             event.stopPropagation();
         });
     </script>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strobe Light Effect</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <script src="script.js"></script>
+</body>
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const colors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#FF00FF', '#00FFFF', '#FFFFFF', '#000000'];
+    let index = 0;
+
+    setInterval(function() {
+        document.body.style.backgroundColor = colors[index];
+        index = (index + 1) % colors.length;
+    }, 100); // Change color every 100 milliseconds (adjust as needed)
+});
+
+
+
+  
 </body>
 
   <body>
